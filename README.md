@@ -5,6 +5,8 @@ We were tasked with retrieving data from the Third-party API, Open Weather Map, 
 
 Using the homework image for reference for the web application's appearance and functionality.
 
+https://jonmorg-hs.github.io/Weather-Dashboard/
+
 <img src="assets/imgs/screenshot.png">
 
 I added a unit (metric or imperial) select option for the user's preference. The selection was stored and retrieved using local storage.

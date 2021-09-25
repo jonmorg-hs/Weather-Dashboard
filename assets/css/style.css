@@ -92,13 +92,33 @@ section{
     width:40px;
     height:40px;
 }
-.uv{
+.uv_favorable{
     display:inline-block;
     width:40px;
     padding:3px;
     height:20px;
     border-radius:3px;
     background-color:green;
+    color:white;
+    text-align:center;
+}
+.uv_moderate{
+    display:inline-block;
+    width:40px;
+    padding:3px;
+    height:20px;
+    border-radius:3px;
+    background-color:rgb(208, 209, 190);
+    color:white;
+    text-align:center;
+}
+.uv_severe{
+    display:inline-block;
+    width:40px;
+    padding:3px;
+    height:20px;
+    border-radius:3px;
+    background-color:rgb(128, 0, 0);
     color:white;
     text-align:center;
 }

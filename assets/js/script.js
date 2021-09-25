@@ -159,7 +159,14 @@ function showWeather(data){
     $('#temp').html("Temp: "+data['current']['temp']+" "+degrees);
     $('#wind').html("Wind: "+data['current']['wind_speed']+" "+speed);
     $('#humidity').html("Humidity: "+data['current']['humidity']);
-    $('#uvindex').html("UV Index: <div class='uv'>"+data['current']['uvi']+"</div>"); 
+    if(data['current']['uvi']*1<3){
+        $('#uvindex').html("UV Index: <div class='uv_favorable'>"+data['current']['uvi']+"</div>"); 
+    } else {
+    if(data['current']['uvi']*1<5){
+        $('#uvindex').html("UV Index: <div class='uv_moderate'>"+data['current']['uvi']+"</div>"); 
+    } else {       
+    $('#uvindex').html("UV Index: <div class='uv_severe'>"+data['current']['uvi']+"</div>"); 
+    }}
     var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?q="+str[1]+"&units="+unit+"&appid=67313a7465f37268318f91bd61d81546";
     fetch(requestUrl)
       .then(function (response) {
@@ -182,7 +189,14 @@ function showFavoriteWeather(data){
     $('#temp').html("Temp: "+data['main']['temp']+" "+degrees);
     $('#wind').html("Wind: "+data['wind'].speed+" "+speed);
     $('#humidity').html("Humidity: "+data['main']['humidity']);
-    $('#uvindex').html("UV Index: <div class='uv'>"+data['current']['uvi']+"</div>"); 
+    if(data['main']['uvi']*1<3){
+        $('#uvindex').html("UV Index: <div class='uv_favorable'>"+data['main']['uvi']+"</div>"); 
+    } else {
+    if(data['current']['uvi']*1<5){
+        $('#uvindex').html("UV Index: <div class='uv_moderate'>"+data['main']['uvi']+"</div>"); 
+    } else {       
+    $('#uvindex').html("UV Index: <div class='uv_severe'>"+data['main']['uvi']+"</div>"); 
+    }}
     setTimeout(function(){
     if(cities.includes(data['name'])){} else {
     var check = confirm('Do you want to save this city to favourites?');
