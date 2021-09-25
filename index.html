@@ -7,8 +7,37 @@
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-
-  <body>
-
+  <body oncontextmenu="return false">
+    <header>Weather Dashboard</header>
+    <section>
+    <panel id="search">
+    <div id="search_div">
+    <label >Search for a City:</label><br/>
+    <input id="citysearch" value="" placeholder="City"><br/>
+    <button id="searchbtn" class="searchbtn">Search</button><br/> 
+    <select id="searchunit" ><option value="metric">Metric</option><option value="imperial">Imperial</option></select>
+    </div>
+    <div id="favorites_div">
+    </div>
+    </panel>
+    <panel id="result">
+    <div id="current_div">
+    <label class="currentcity" id="city"></label><label id="currentdate"></label><img id="currenticon"/><br/>
+    <br/>
+    <label id="temp"></label><br/><br/>
+    <label id="wind"></label><br/><br/>
+    <label id="humidity"></label><br/><br/>
+    <label id="uvindex"></label><br/>
+    </div>
+    <div id="forecast_div">
+    <label>5-Day Forecast:</label><br/><br/>
+    <div id="forecast_days">
+    </div>
+    </div>
+    </panel>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/script.js" ></script>
   </body>
   </html>    

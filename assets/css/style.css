@@ -1,0 +1,152 @@
+html,body{
+    width:100%;
+    height:100%;
+    top:0px;
+    text-align:center;
+    padding:0px;
+    margin:0px;
+}
+header{
+    background-image: linear-gradient(to right, #0080ff,#000099);
+    color:white;
+    font:bold 30px Arial;
+    height:50px;
+    position:relative;
+    line-height:1.6;
+}
+section{
+    margin:auto;
+    width:1000px;
+}
+#search{
+    top:0px;
+    display:inline-block;
+    width:200px;
+    height:100%;
+}
+#search_div{
+    text-align:left;
+    padding:5px;
+    width:100%;
+    height:120px;
+    border-bottom: 2px solid #000000;
+}
+#search_div label{
+    margin-top:10px;
+    font:bold 24px Arial;
+}
+#search_div input{
+    margin-top:5px;
+    font: normal 20px arial;
+    width:calc(100% - 8px);
+}
+#search_div select{
+    margin-top:5px;
+    font: normal 20px arial;
+    width:calc(100% - 0px);
+}
+.searchbtn{
+    margin-top:5px;
+    border:none;
+    border-radius:3px;
+    background-color:#66b2ff;
+    color:white;
+    font: normal 18px arial;
+    width:100%;
+}
+#favourites_div{
+    font: normal 18px arial;
+    padding:5px;
+    width:100%;
+}  
+.fav_btn{
+    margin-left:5px;
+    font: normal 18px arial;
+    cursor:pointer;
+    max-width:500px;
+    width:100%;
+    margin-top:5px;
+    background-color:#C0C0C0;
+    border-radius:3px;
+}
+#result{
+    top:0px;
+    margin-left:15px;
+    display:inline-block;
+    margin:auto;
+    height:100%;
+} 
+#current_div{
+    margin-left:20px;
+    margin-top:10px;
+    width:100%;
+    border: 1px solid black;
+    border-radius:2px;
+    height:200px;
+    text-align:left;
+    padding:10px;
+    font: normal 16px arial;
+}
+#currenticon{
+    margin-left:5px;
+    width:40px;
+    height:40px;
+}
+.uv{
+    display:inline-block;
+    width:40px;
+    padding:3px;
+    height:20px;
+    border-radius:3px;
+    background-color:green;
+    color:white;
+    text-align:center;
+}
+.currentcity{
+    font: bold 24px arial;
+}
+#currentdate{
+    margin-left:5px;
+    font: bold 24px arial;
+}
+
+#forecast_div{
+    margin-left:10px;
+    text-align:left;
+    padding:10px;
+}
+#forecast_div label{
+    font: bold 18px arial;
+} 
+.forecast{
+    display:inline-block;
+    margin-right:10px;
+    margin-bottom:10px;
+    width:100px;
+    height:150px;
+    background-color:#004c99;
+    padding:5px;
+    border-radius:3px;
+}
+.day_forecast{
+    color:white;
+    font: normal 14px arial;  
+}
+.day_forecast_date{
+    color:white;
+    font: normal 16px arial;  
+}
+@media screen and (min-width: 768px) {
+    section{
+      max-width: 100%;
+      margin:auto;
+    }
+  }
+
+   @media screen and (max-width: 768px) {
+    section{
+      width: 380px;
+      margin:auto;
+    }
+}
+
