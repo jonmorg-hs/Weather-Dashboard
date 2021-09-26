@@ -173,7 +173,6 @@ function showWeather(data){
         return response.json();
     }).then(function(data){
         showForecast(data);
-        console.log(data);
     });;   
 }
 
@@ -192,11 +191,12 @@ function showFavoriteWeather(data){
     if(data['main']['uvi']*1<3){
         $('#uvindex').html("UV Index: <div class='uv_favorable'>"+data['main']['uvi']+"</div>"); 
     } else {
-    if(data['current']['uvi']*1<5){
+    if(data['main']['uvi']*1<5){
         $('#uvindex').html("UV Index: <div class='uv_moderate'>"+data['main']['uvi']+"</div>"); 
     } else {       
     $('#uvindex').html("UV Index: <div class='uv_severe'>"+data['main']['uvi']+"</div>"); 
     }}
+    getUVIndex(data['coord']['lat'],data['coord']['lon']);
     setTimeout(function(){
     if(cities.includes(data['name'])){} else {
     var check = confirm('Do you want to save this city to favourites?');
@@ -232,5 +232,26 @@ function showForecast(data){
         cdate = moment().add(day, 'days').format('YYYY-MM-DD');
         }
     }
+}
+
+function getUVIndex(lat,lng){
+    var requestUrl = "https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lng+"&appid=67313a7465f37268318f91bd61d81546";
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+    }).then(function(data){
+        showUVIndex(data);
+    });   
+}
+
+function showUVIndex(data){
+    if(data['current']['uvi']*1<3){
+        $('#uvindex').html("UV Index: <div class='uv_favorable'>"+data['current']['uvi']+"</div>"); 
+    } else {
+    if(data['current']['uvi']*1<5){
+        $('#uvindex').html("UV Index: <div class='uv_moderate'>"+data['current']['uvi']+"</div>"); 
+    } else {       
+    $('#uvindex').html("UV Index: <div class='uv_severe'>"+data['current']['uvi']+"</div>"); 
+    }}    
 }
 
